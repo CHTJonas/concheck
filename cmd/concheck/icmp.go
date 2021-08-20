@@ -2,6 +2,7 @@ package main
 
 import (
 	"os"
+	"runtime"
 	"time"
 
 	"github.com/go-ping/ping"
@@ -29,7 +30,9 @@ func checkICMP(endpoint string) {
 	pinger.Count = 5
 	pinger.Interval = 100 * time.Millisecond
 	pinger.Timeout = 50 * time.Second
-	// pinger.SetPrivileged(true)
+	if runtime.GOOS != "darwin" {
+		pinger.SetPrivileged(true)
+	}
 	err = pinger.Run()
 	if err != nil {
 		panic(err)
