@@ -12,6 +12,7 @@ func testHTTP() {
 		"https://connectivitycheck.gstatic.com/generate_204",
 		"https://cloudflare.com/cdn-cgi/trace",
 	}
+	URLs = append(os.Args[1:], URLs...)
 	for _, url := range URLs {
 		wg.Add(1)
 		go checkHTTP(url)
