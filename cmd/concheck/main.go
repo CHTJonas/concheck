@@ -11,6 +11,9 @@ func main() {
 	go testICMP()
 
 	wg.Add(1)
+	go testDNS()
+
+	wg.Add(1)
 	go testHTTP()
 
 	wg.Wait()
