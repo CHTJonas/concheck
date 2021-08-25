@@ -1,6 +1,6 @@
 # Concheck
 
-Here lies the code for a teeny tiny go application to test your internet connectivity. It tries to ping a few endpoints and send a few HTTP requests. If these are successful then it exits cleanly, otherwise it quits with a non-zero exit code.
+Here lies the code for a teeny tiny go application to test your internet connectivity. It tries to ping a few endpoints, resolve a few DNS queries and send a few HTTP requests. If these are successful then it exits cleanly, otherwise it quits with a non-zero exit code.
 
 ## Usage
 
