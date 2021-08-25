@@ -19,7 +19,7 @@ func testICMP() {
 		wg.Add(1)
 		go checkICMP(endpoint)
 	}
-	wg.Done()
+	wg.Wait()
 }
 
 func checkICMP(endpoint string) {

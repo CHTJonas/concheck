@@ -17,7 +17,7 @@ func testHTTP() {
 		wg.Add(1)
 		go checkHTTP(url)
 	}
-	wg.Done()
+	wg.Wait()
 }
 
 func checkHTTP(url string) {

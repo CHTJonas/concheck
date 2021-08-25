@@ -14,7 +14,7 @@ func testDNS() {
 		wg.Add(1)
 		go checkDNS(name)
 	}
-	wg.Done()
+	wg.Wait()
 }
 
 func checkDNS(name string) {

@@ -7,14 +7,7 @@ import (
 var wg sync.WaitGroup
 
 func main() {
-	wg.Add(1)
-	go testICMP()
-
-	wg.Add(1)
-	go testDNS()
-
-	wg.Add(1)
-	go testHTTP()
-
-	wg.Wait()
+	testICMP()
+	testDNS()
+	testHTTP()
 }
