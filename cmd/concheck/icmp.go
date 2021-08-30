@@ -33,7 +33,7 @@ func checkICMP(endpoint string, unreachableCount *int) {
 	}
 	pinger.Count = 5
 	pinger.Interval = 100 * time.Millisecond
-	pinger.Timeout = 50 * time.Second
+	pinger.Timeout = 5 * time.Second
 	if runtime.GOOS != "darwin" {
 		pinger.SetPrivileged(true)
 	}
