@@ -8,7 +8,6 @@ import (
 func testHTTP() {
 	URLs := []string{
 		"https://chtj2.user.srcf.net/static",
-		"https://captive.apple.com/",
 		"https://connectivitycheck.gstatic.com/generate_204",
 		"https://cloudflare.com/cdn-cgi/trace",
 	}
