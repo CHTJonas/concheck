@@ -2,6 +2,12 @@
 
 package utils
 
+import (
+	"errors"
+
+	"golang.org/x/sys/windows"
+)
+
 func IsUnreachableError(err error) bool {
-	return true // TODO
+	return errors.Is(err, windows.WSAENETUNREACH)
 }
