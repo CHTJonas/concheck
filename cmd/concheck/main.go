@@ -4,7 +4,10 @@ import (
 	"sync"
 )
 
-var wg sync.WaitGroup
+var (
+	version = "dev-edge"
+	wg      sync.WaitGroup
+)
 
 func main() {
 	testICMP()
