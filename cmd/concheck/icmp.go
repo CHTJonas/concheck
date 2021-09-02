@@ -17,6 +17,9 @@ func testICMP() {
 	}
 	unreachableCount := 0
 	for _, endpoint := range endpoints {
+		if (forceIPv4Flag && !utils.IsIPv4(endpoint)) || (forceIPv6Flag && utils.IsIPv4(endpoint)) {
+			continue
+		}
 		wg.Add(1)
 		go checkICMP(endpoint, &unreachableCount)
 	}
@@ -40,6 +43,10 @@ func checkICMP(endpoint string, unreachableCount *int) {
 	err = pinger.Run()
 	if err != nil {
 		if utils.IsUnreachableError(err) {
+			// If the user has explicitly forced IPv4 or IPv6 then don't squelch errors
+			if forceIPv4Flag || forceIPv6Flag {
+				os.Exit(2)
+			}
 			*unreachableCount++
 			wg.Done()
 			return
