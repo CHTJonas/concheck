@@ -10,6 +10,16 @@ Just run the `concheck` binary - that's it! I designed it to be run as part of a
 
 On Linux you will need to run the binary with `CAP_NET_RAW` privileges in order to send ICMP packets (running as root is strongly discouraged). You can do this by running `sudo setcap cap_net_raw=+ep /usr/local/bin/concheck` in a terminal.
 
+The (non-zero) exit code determines the type of connectivity failure:
+
+| Exit Code | What's not working?      |
+| --------- | ------------------------:|
+| 1         | HTTP connectivity broken |
+| 2         | ICMP connectivity broken |
+| 3         | DNS resolution broken    |
+
+There are two command line flags to explicitly force the connectivity checks to use either IPv4 or IPv6. These are `-4` and `-6` respectively. In most situations however, you will not need to use either. We're clever enough to figure out when you're running with an IPv4- or IPv6-only connection and squelch out the "network unreachable" errors in those situations.
+
 ## Installation
 
 Pre-built binaries for a variety of operating systems and architectures are available to download from [GitHub Releases](https://github.com/CHTJonas/concheck/releases). If you wish to compile from source then you will need a suitable [Go toolchain installed](https://golang.org/doc/install). After that just clone the project using Git and run Make! Cross-compilation is easy in Go so by default we build for all targets and place the resulting executables in `./bin`:
