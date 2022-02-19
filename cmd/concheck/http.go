@@ -14,6 +14,7 @@ func testHTTP() {
 		"https://chtj2.user.srcf.net/static",
 		"https://connectivitycheck.gstatic.com/generate_204",
 		"https://cloudflare.com/cdn-cgi/trace",
+		"https://www.apple.com/library/test/success.html",
 	}
 	URLs = append(flag.Args(), URLs...)
 	for _, url := range URLs {
