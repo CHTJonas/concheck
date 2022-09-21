@@ -11,9 +11,9 @@ import (
 
 func testICMP() {
 	endpoints := []string{
-		"1.0.0.1", "2606:4700:4700::1001",
-		"8.8.4.4", "2001:4860:4860::8844",
-		"149.112.112.112", "2620:fe::fe",
+		"212.187.216.254", "2001:1900:5:2:2:0:11c:2f2", // JANET.ear1.London1.Level3.net
+		"46.227.201.1", "2a01:9e00::201:1", // lo.aebi.m.faelix.net
+		"193.0.0.164", "2001:67c:2e8:3::c100:a4", // ping.ripe.net
 	}
 	unreachableCount := 0
 	for _, endpoint := range endpoints {

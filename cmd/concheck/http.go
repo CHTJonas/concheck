@@ -11,8 +11,8 @@ import (
 
 func testHTTP() {
 	URLs := []string{
-		"https://chtj2.user.srcf.net/static",
-		"https://connectivitycheck.gstatic.com/generate_204",
+		"https://detectportal.firefox.com/",
+		"https://www.google.com/generate_204",
 		"https://cloudflare.com/cdn-cgi/trace",
 		"https://www.apple.com/library/test/success.html",
 	}
