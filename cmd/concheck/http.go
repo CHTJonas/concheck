@@ -50,7 +50,7 @@ func checkHTTP(url string) {
 		panic(err)
 	}
 	req.Header.Set("Cache-Control", "no-store, max-age=0")
-	req.Header.Set("User-Agent", "concheck/"+version+" (+https://github.com/CHTJonas/concheck)")
+	req.Header.Set("User-Agent", uaString())
 	resp, err := client.Do(req)
 	if err != nil {
 		os.Exit(1)
