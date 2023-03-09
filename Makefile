@@ -131,4 +131,8 @@ build: build/linux build/freebsd build/openbsd build/darwin build/windows
 clean:
 	@rm -rf bin
 
-all: format build
+license: dir
+	cp NOTICE bin/NOTICE
+	cp LICENSE bin/LICENSE
+
+all: format build license
